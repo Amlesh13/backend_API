@@ -2,7 +2,6 @@
  * 
  */
 package com.learners.service.interfaces;
-
 import com.learners.java.entities.ExternalFacingUser;
 
 /**
@@ -20,6 +19,5 @@ public interface IUserService {
 	 */
 	public ExternalFacingUser create(ExternalFacingUser externalFacingUser) throws Exception;
 			
-
 
 }
