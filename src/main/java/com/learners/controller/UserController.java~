@@ -1,8 +1,13 @@
+/**
+ * 
+ */
 package com.learners.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.learners.java.entities.ExternalFacingUser;
 import com.learners.service.interfaces.IUserService;
 import com.wordnik.swagger.annotations.Api;
@@ -12,13 +17,14 @@ import com.wordnik.swagger.annotations.ApiResponses;
 
 /**
  * @author amlesh
+ *
  */
-
 @Api(description="This api has controllers for User CRUD operations" ,value="User API's",basePath="/user")
 @RestController
 public class UserController {
 	@Autowired
 	IUserService userService;
+	
 	@ApiOperation(	value="Creates a new User entity in the system"
 			,notes="The user is unique in the system, The creation date and updated "
 					+ "date are automatically filled."
@@ -35,16 +41,20 @@ public class UserController {
 		//	throws Exception{
 		public  ExternalFacingUser createUser(ExternalFacingUser externalFacingUser)
 				throws Exception{
-		//call the business layer
 		
+		//call the business layer
+
 		ExternalFacingUser userReturned =  userService.create(externalFacingUser);
 		return userReturned;
 	}
+
 	
 	/*@ApiOperation(value="This is Authenticates a user by passing user name, password for default provider"
-					,notes="The user is unique in the system for a given provider.")
 					+ "The user may passed as a user id or as DEFAULT:userId"
-	manish.gupta@ilfstechnologies.com
+					,notes="The user is unique in the system for a given provider.")
+	
+	
+	
 	 @ApiResponses(value={
 			@ApiResponse(code=200, message="Ok")
 		,	@ApiResponse(code=404, message="Not Found")
@@ -73,14 +83,19 @@ public class UserController {
 				session); 
 		return session;
 	}
-*/		
-	@ApiOperation( value="This is delete user method from system",notes="the user is unique in the system for user provider" )
+
+*/	
+	
+	
+	@ApiOperation( value="This is delete user method from system" ,notes="the user is unique in the system for user provider" )
+
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public  ExternalFacingUser deleteUser(ExternalFacingUser externalFacingUser)
 			throws Exception{
-	
-		//call the business layer
+	//call the business layer
 	ExternalFacingUser userReturned =  userService.create(externalFacingUser);
 	return userReturned;
+	
 	}
 }
+

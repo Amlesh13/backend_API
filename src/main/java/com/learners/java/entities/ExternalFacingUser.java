@@ -14,10 +14,7 @@ import com.wordnik.swagger.annotations.ApiModelProperty;
  *
  */
 @ApiModel(value="A User", description="This is a user", parent=UpdateUserEntity.class)
-
 public class ExternalFacingUser  extends UpdateUserEntity implements Serializable {
-
-
 
 	@ApiModelProperty(value="This is the id of the user."
 			,required=true,notes="The id of the user is unique in the system, it is analogous to user name"
@@ -27,5 +24,5 @@ public class ExternalFacingUser  extends UpdateUserEntity implements Serializabl
 	 * by the user.
 	 */
 	private String userId;
-
+	
 }

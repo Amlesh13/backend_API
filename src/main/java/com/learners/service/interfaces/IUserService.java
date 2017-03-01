@@ -18,6 +18,11 @@ public interface IUserService {
 	 * @return a user which has been created
 	 */
 	public ExternalFacingUser create(ExternalFacingUser externalFacingUser) throws Exception;
-			
+	
+	/*public ExternalFacingUser delete(ExternalFacingUser externalFacingUser) throws Exception;
+	
+
+	public ExternalFacingUser update(ExternalFacingUser externalFacingUser) throws Exception;
+	*/
 
 }
